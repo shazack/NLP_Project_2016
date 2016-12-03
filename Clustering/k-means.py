@@ -16,3 +16,12 @@ print "Time taken for K Means clustering: ", elapsed, "seconds."
 # Create a Word / Index dictionary, mapping each vocabulary word to
 # a cluster number                                                                                            
 word_centroid_map = dict(zip( model.index2word, idx ))
+
+
+for cluster in xrange(0,10): 
+    print "\nCluster %d" % cluster
+    words = []
+    for i in xrange(0,len(word_centroid_map.values())):
+        if( word_centroid_map.values()[i] == cluster ):
+            words.append(word_centroid_map.keys()[i])
+    print words
